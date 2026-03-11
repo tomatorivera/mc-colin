@@ -3,6 +3,6 @@ package com.trivera.msvc_customer.utils;
 public interface IMapper<T> {
 
   T getDTO();
-  void setDTO(T t);
+  void setData(T t);
 
 }

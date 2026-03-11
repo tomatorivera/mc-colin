@@ -1,7 +1,5 @@
 package com.trivera.msvc_customer.entities;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.UUID;
 
 import com.trivera.msvc_customer.dto.CustomerDTO;
@@ -57,7 +55,7 @@ public class CustomerEntity implements IMapper<CustomerDTO> {
   }
 
   @Override
-  public void setDTO(CustomerDTO t) {
+  public void setData(CustomerDTO t) {
     this.id = t.getId();
     this.cbu = t.getCbu();
     this.name = t.getName();
