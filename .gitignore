@@ -1,0 +1,60 @@
+# Ignorar carpetas de compilación en cualquier nivel (root o subcarpetas)
+**/target/
+**/out/
+**/bin/
+
+# Ignorar archivos de log en cualquier carpeta
+**/*.log
+
+### IntelliJ ###
+.idea/*
+!.idea/codeStyles
+!.idea/runConfigurations
+**/*.iml
+**/*.ipr
+**/*.iws
+
+# Archivos específicos de usuario de IntelliJ en subcarpetas
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/**/usage.statistics.xml
+**/.idea/**/dictionaries
+**/.idea/**/shelf
+
+### Java & Build Tools ###
+# Compilados
+**/*.class
+
+# Empaquetados
+**/*.jar
+**/*.war
+**/*.nar
+**/*.ear
+**/*.zip
+**/*.tar.gz
+**/*.rar
+
+# Maven Wrapper
+.mvn/
+**/ .mvn/
+!**/wrapper/maven-wrapper.jar
+
+# Crash logs
+hs_err_pid*
+replay_pid*
+
+### Eclipse / VS Code ###
+**/.project
+**/.classpath
+**/.settings/
+**/.factorypath
+**/.vscode/
+
+### OS Files ###
+.DS_Store
+Thumbs.db
+
+### Data sensible ###
+**/application-*.properties
+**/.env
+**/secrets/
