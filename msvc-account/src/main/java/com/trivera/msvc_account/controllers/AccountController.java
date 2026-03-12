@@ -4,12 +4,16 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.trivera.msvc_account.dto.AccountDTO;
+import com.trivera.msvc_account.dto.DepositDTO;
 import com.trivera.msvc_account.services.IAccountService;
+
+import lombok.extern.log4j.Log4j2;
 
 @RestController
 @RequestMapping("/accounts")
@@ -30,6 +34,11 @@ public class AccountController {
     public AccountDTO addAccount(@RequestBody AccountDTO accountDTO) { 
         // Todo: add model validations
         return accountService.save(accountDTO);
+    }
+
+    @PutMapping
+    public AccountDTO depositAccount(@RequestBody DepositDTO depositDTO) {
+        return accountService.depositInAccount(depositDTO);
     }
 
 }
