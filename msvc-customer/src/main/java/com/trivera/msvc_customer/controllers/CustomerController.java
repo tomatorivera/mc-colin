@@ -36,7 +36,7 @@ public class CustomerController {
     return customerService.save(customer);
   }
 
-  @GetMapping("/{code}")
+  @GetMapping("/code/{code}")
   public ResponseEntity<CustomerDTO> getByCode(@PathVariable String code) {
     CustomerDTO customer = customerService.getByCode(code);
 
