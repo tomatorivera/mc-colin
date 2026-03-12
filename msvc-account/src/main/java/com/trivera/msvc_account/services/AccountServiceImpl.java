@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.trivera.msvc_account.clients.ICustomerRESTClient;
 import com.trivera.msvc_account.dto.AccountDTO;
 import com.trivera.msvc_account.dto.CustomerDTO;
+import com.trivera.msvc_account.dto.DepositDTO;
 import com.trivera.msvc_account.entities.AccountEntity;
 import com.trivera.msvc_account.repositories.IAccountRepository;
 
@@ -64,6 +65,7 @@ public class AccountServiceImpl implements IAccountService {
     @Override
     @Transactional
     public void delete(UUID id) {
+        log.warn("Deleting account - id {}", id);
         accountRepository.deleteById(id);
     }
 
@@ -77,6 +79,21 @@ public class AccountServiceImpl implements IAccountService {
             return AccountDTO.builder().build();
 
         return optAccount.orElseThrow().getDTO();
+    }
+
+    @Override
+    public AccountDTO depositInAccount(DepositDTO depositDTO) {
+        Optional<AccountEntity> optAccount = accountRepository.findByNumberAndCustomerCode(depositDTO.getAccountNumber(), depositDTO.getCustomerCode());
+        
+        // Todo: throw an exception with a descriptive message
+        if (optAccount.isEmpty())
+            return AccountDTO.builder().build();
+
+        log.info("New transaction: {}", depositDTO);
+        AccountEntity accountEntity = optAccount.orElseThrow();
+        accountEntity.setBalance(accountEntity.getBalance().add(depositDTO.getAmount()));
+
+        return accountRepository.save(accountEntity).getDTO();
     }
     
 }
