@@ -18,3 +18,9 @@ spring:
 
 server:
   port: ${SERVER_PORT:8081}
+
+feign:
+  clients:
+    customer:
+      name: msvc-customer
+      url: http://localhost:8083/customers
