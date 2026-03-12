@@ -39,6 +39,16 @@
 **/ .mvn/
 !**/wrapper/maven-wrapper.jar
 
+### STS ###
+### STS ###
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings
+**/.springBeans
+**/.sts4-cache
+
 # Crash logs
 hs_err_pid*
 replay_pid*
