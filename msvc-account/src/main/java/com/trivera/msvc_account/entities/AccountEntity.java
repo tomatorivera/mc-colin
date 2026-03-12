@@ -50,7 +50,7 @@ public class AccountEntity implements IMapper<AccountDTO> {
               .balance(balance)
               .customer(
                 CustomerDTO.builder()
-                    .cbu(customerCode)
+                    .code(customerCode)
                     .build()
               ) 
               .build();
@@ -62,7 +62,7 @@ public class AccountEntity implements IMapper<AccountDTO> {
     this.number = t.getNumber();
     this.name = t.getName();
     this.balance = t.getBalance();
-    this.customerCode = t.getCustomer().getCbu();
+    this.customerCode = t.getCustomer().getCode();
   }
   
 }

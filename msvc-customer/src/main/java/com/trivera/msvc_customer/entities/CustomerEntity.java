@@ -28,7 +28,7 @@ public class CustomerEntity implements IMapper<CustomerDTO> {
   private UUID id;
 
   @Column(nullable = false, unique = true, length = 20)
-  private String cbu;
+  private String code;
 
   @Column(nullable = false, length = 100)
   private String name;
@@ -46,7 +46,7 @@ public class CustomerEntity implements IMapper<CustomerDTO> {
   public CustomerDTO getDTO() {
     return CustomerDTO.builder()
               .id(id)
-              .cbu(cbu)
+              .code(code)
               .name(name)
               .address(address)
               .email(email)
@@ -57,7 +57,7 @@ public class CustomerEntity implements IMapper<CustomerDTO> {
   @Override
   public void setData(CustomerDTO t) {
     this.id = t.getId();
-    this.cbu = t.getCbu();
+    this.code = t.getCode();
     this.name = t.getName();
     this.address = t.getAddress();
     this.email = t.getEmail();

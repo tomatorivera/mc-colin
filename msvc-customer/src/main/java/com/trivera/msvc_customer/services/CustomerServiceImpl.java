@@ -43,8 +43,8 @@ public class CustomerServiceImpl implements ICustomerService {
 
   @Override
   @Transactional(readOnly = true)
-  public CustomerDTO getByCbu(String cbu) {
-    Optional<CustomerEntity> optCustomer = customerRepository.findByCbu(cbu);
+  public CustomerDTO getByCode(String code) {
+    Optional<CustomerEntity> optCustomer = customerRepository.findByCode(code);
 
     // Todo: throw an exception with a descriptive message
     if (optCustomer.isEmpty())

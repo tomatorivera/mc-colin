@@ -16,7 +16,7 @@ import lombok.Setter;
 public class CustomerDTO {
 
   private UUID id;
-  private String cbu;
+  private String code;
   private String name;
   private String email;
   private String mobile;
