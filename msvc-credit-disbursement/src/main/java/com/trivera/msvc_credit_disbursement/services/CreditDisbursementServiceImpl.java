@@ -1,6 +1,7 @@
 package com.trivera.msvc_credit_disbursement.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
@@ -31,17 +32,22 @@ public class CreditDisbursementServiceImpl implements ICreditDisbursementService
     @Override
     @Transactional(readOnly = true)
     public List<CreditDisbursementDTO> getAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
+        return creditRepository.findAll().stream().map(CreditDisbursementEntity::getDTO).toList();
     }
 
     @Override
     public CreditDisbursementDTO getById(UUID id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getById'");
+        Optional<CreditDisbursementEntity> optCredit = creditRepository.findById(id);
+
+        // TODO throw an exception
+        if (optCredit.isEmpty())
+            return CreditDisbursementDTO.builder().build();
+
+        return optCredit.orElseThrow().getDTO();
     }
 
     @Override
+    @Transactional
     public CreditDisbursementDTO add(CreditDisbursementDTO credit) {
         log.info("Add credit request: " + credit);
 
