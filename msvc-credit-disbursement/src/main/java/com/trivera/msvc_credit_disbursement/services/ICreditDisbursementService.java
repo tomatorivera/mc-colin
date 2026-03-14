@@ -9,7 +9,7 @@ public interface ICreditDisbursementService {
     
     List<CreditDisbursementDTO> getAll();
     CreditDisbursementDTO getById(UUID id);
-    CreditDisbursementDTO save(CreditDisbursementDTO credit);
+    CreditDisbursementDTO add(CreditDisbursementDTO credit);
     void delete(UUID id);
 
 }
