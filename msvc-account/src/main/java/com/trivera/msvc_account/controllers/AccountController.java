@@ -13,8 +13,6 @@ import com.trivera.msvc_account.dto.AccountDTO;
 import com.trivera.msvc_account.dto.DepositDTO;
 import com.trivera.msvc_account.services.IAccountService;
 
-import lombok.extern.log4j.Log4j2;
-
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
