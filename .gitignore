@@ -68,3 +68,6 @@ Thumbs.db
 **/application-*.properties
 **/.env
 **/secrets/
+
+### Otros ###
+**/**/META-INF/additional-spring-configuration-metadata.json

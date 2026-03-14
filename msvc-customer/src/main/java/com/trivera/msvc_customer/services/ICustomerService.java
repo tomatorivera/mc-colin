@@ -9,7 +9,7 @@ public interface ICustomerService {
   
   List<CustomerDTO> getAll();
   CustomerDTO getById(UUID id);
-  CustomerDTO getByCbu(String cbu);
+  CustomerDTO getByCode(String code);
   CustomerDTO save(CustomerDTO customer);
   void delete(UUID id);
 

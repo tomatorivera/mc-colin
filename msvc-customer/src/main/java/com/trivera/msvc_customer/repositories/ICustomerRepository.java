@@ -11,6 +11,6 @@ import com.trivera.msvc_customer.entities.CustomerEntity;
 @Repository
 public interface ICustomerRepository extends JpaRepository<CustomerEntity, UUID> {
   
-  Optional<CustomerEntity> findByCbu(String cbu);
+  Optional<CustomerEntity> findByCode(String code);
 
 }

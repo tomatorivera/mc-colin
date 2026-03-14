@@ -1,5 +1,6 @@
-package com.trivera.msvc_customer.dto;
+package com.trivera.msvc_account.dto;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -7,19 +8,20 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CustomerDTO {
-
+public class AccountDTO {
+  
   private UUID id;
-  private String code;
+  private String number;
   private String name;
-  private String email;
-  private String mobile;
-  private String address;
+  private BigDecimal balance;
+  private CustomerDTO customer;
 
 }

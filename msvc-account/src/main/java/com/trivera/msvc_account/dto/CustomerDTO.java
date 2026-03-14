@@ -1,4 +1,4 @@
-package com.trivera.msvc_customer.dto;
+package com.trivera.msvc_account.dto;
 
 import java.util.UUID;
 
@@ -7,9 +7,11 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
